@@ -1,0 +1,300 @@
+/* ---------
+    HEADER
+----------- */
+.dk-header-outer-container{
+  height: 55px;
+  /* background-color: #ffeb3b; */
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+}
+.dk-header-title{
+  font-size: 32px;
+  text-align: center!important;
+  font-weight: 200;
+  letter-spacing: 4px;
+  color:black!important;
+
+  padding-top: 10px;
+}
+.dk-header-button{
+  padding: 15px 10px 10px 40px;
+}
+.dk-header-right-end{
+  margin-top: 20px!important;
+  background-color: grey!important;
+}
+.dk-header-col-2{
+  margin-top: 14px;
+}
+.dk-header-col-3{
+  margin-top: 14px;
+}
+/* ----------
+   LAYOUT
+------------ */
+.layout-container{
+  min-height: 70vh;
+}
+/* --------------
+ GENERAL STYLING
+---------------- */
+.css-1xefn4c{
+  background-color:#2B2B52!important;
+}
+.css-17c5le2{
+  background-color:#2B2B52!important;
+
+}
+.css-1f3y7dr{
+  background-color:#2B2B52!important;
+
+}
+.row{
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+.css-6cthfa{
+  background-color: #2B2B52!important;
+}
+.col-md-4{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+.col-md-8{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+.col-md-7{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+/* ----------------
+   HOME COMPONENT
+------------------ */
+.dk-home-outer-1-container{
+  padding-top: 0px;
+  /* background-color:#2B2B52!important; */
+  min-height: 70vh;
+  /* padding: 40px 40px 40px 40px; */
+}
+.dk-home-outer-2-container{
+    min-height: 80vh;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    /* background-color:#f9f0ff!important; */
+}
+.home-dk-step-container{
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+  min-height: 230px;
+  padding: 10px;
+  background-color: white!important;
+  /* border-radius: 50%; */
+  min-width: 230px!important;
+  margin:15px;
+}
+ .dk-home-inner-container-1-title{
+   font-size: 25px;
+   padding-top: 5px;
+   padding-bottom: 20px!important;
+   color: black!important;
+   font-weight: 700;
+   text-align: center;
+ }
+
+.dk-home-inner-container-3{
+  height: 30px;
+  /* background-color:#f9f0ff!important; */
+}
+.home-dk-step-title{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.dk-home-outer-2-title{
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+.dk-home-inner-container-start{
+  margin-top: 30px;
+  padding: 15px;
+  /* margin-right: 10px; */
+  background-color:#ffffff;
+  min-width: 360px!important;
+  max-width: 400px!important;
+  max-height: 470px!important;
+  padding-top:10px;
+  padding-bottom: 20px;
+
+  /* border-radius: 5px; */
+  /* height: 500px; */
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+
+}
+@media (min-width: 1000px) {
+  .dk-home-inner-container-start{
+    margin-right: 0px;
+  }
+}
+.dk-home-inner-container-start-btn100{
+  width: 100%!important;
+}
+.dk-home-proceed-btn{
+  margin-top: 30px;
+}
+.dk-home-phone-input-container{
+    margin-top: 30px;
+    text-align: center;
+}
+.dk-home-otp-input-container{
+  margin-top: 30px;
+}
+.dk-home-phone-input{
+  width: 280px!important;
+  letter-spacing: 2px!important;
+}
+.dk-home-otp-input{
+ text-align: center!important;
+ width: 170px!important;
+ letter-spacing: 10px!important;
+}
+.dk-home-user-info-title-container{
+text-align: center;
+padding: 5px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+/* background-color: grey; */
+}
+.dk-home-user-info-title{
+font-size: 25px;
+font-weight: 600;
+}
+.dk-home-user-info-input{
+
+}
+.dk-home-inner-container-2{
+  background-color:#ffffff;
+  /* margin-left: 20px; */
+  /* box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important; */
+  /* margin-right: 10px; */
+  margin-top: 30px;
+  min-height: 50vh;
+}
+.dk-home-inner-container-1-icons{
+  margin-right: 10px;
+  min-width: 110px;
+  padding: 10px!important;
+  max-width: 110px!important;
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+  max-height: 100px!important;
+  border-radius: 12px;
+}
+.dk-home-inner-container-1-description{
+  /* box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important; */
+  padding-left: 10px!important;
+  font-size: 14px;
+  color: black;
+  min-height: 90px;
+}
+.dk-home-row-container{
+  margin-bottom: 25px;
+}
+.home-dk-carousel{
+    margin-bottom: 35px;
+    /* background-color: #f9f0ff; */
+    border-radius: 10px;
+    box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+}
+.home-dk-carousel-inner-container{
+  border-radius: 10px;
+  padding: 7px;
+  height: 100px;
+ }
+ .dk-home-outer-3-container{
+   min-height: 80vh;
+ }
+.dk-home-outer-3-title{
+  font-size: 45px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.home-dk-testimonial-inner-container{
+    min-height: 400px!important;
+
+}
+.home-dk-testimonial-outer-container{
+
+    min-height: 400px!important;
+    background-color: #f0f0f0;
+    padding: 20px;
+    /* box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important; */
+}
+.home-dk-testimonial-description{
+
+  font-size: 15px;
+  color: black;
+  font-style: italic;
+}
+.home-dk-testimonial-img{
+  background-color: white;
+  margin: 10px;
+  height: 200px;
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+  border-radius: 100%;
+  width: 200px;
+}
+.home-dk-testimonial-name{
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  padding: 10px;
+}
+.dk-home-outer-4-container{
+  width: 100%;
+  min-height: 80vh;
+}
+.dk-home-outer-4-inner-container{
+  width: 100%;
+  height: 320px;
+  background: transparent;
+  background-image: radial-gradient(hsla(0,0%,100%,.08) 15%,transparent 0),radial-gradient(hsla(0,0%,100%,.08) 15%,transparent 0);
+  background-size: 25px 25px;
+
+
+  padding-top: 100px;
+}
+.dk-home-outer-4-subtitle{
+  font-size: 45px;
+}
+.dk-home-outer-4-text-container{
+  padding-top: 150px;
+  font-weight: 900;
+}
+.dk-footer-outer-container{
+  background-color: #f9f0ff;
+ padding: 20px;
+}
+.dk-footer-copyrights-container{
+padding-bottom: 40px;
+background-color: #f9f0ff;
+text-align: center;
+}
+.dk-home-outer-5-container{
+  min-height: 90vh;
+}
+.dk-home-outer-5-title{
+  font-size: 45px;
+  text-align: center;
+}
+
+/* --------------
+       Pay
+________________ */
+.dk-pay-outer-container{
+  padding: 30px;
+  margin-top: 30px;
+}
