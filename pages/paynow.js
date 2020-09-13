@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import Layout from '../components/core/layout/layout';
-import DkPay from '../components/pay/dkPay';
+import Payment from '../components/payment/payment';
 
 const Pay = () => {
   return <Fragment>
             <Layout>
-               <DkPay />
+               <Payment />
             </Layout>
          </Fragment>
 }

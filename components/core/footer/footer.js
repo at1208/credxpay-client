@@ -1,19 +1,20 @@
 import React, { Fragment } from 'react';
-import { Button,ButtonGroup } from "@chakra-ui/core";
+import { ButtonGroup } from "@chakra-ui/core";
+import { Button } from 'antd';
 
 const Footer = () => {
   return <Fragment>
           <div className="dk-footer-outer-container">
             <div className="row col justify-content-center">
               <ButtonGroup spacing={4}>
-              <Button variantColor="teal" size="xs" variant="ghost">
+              <Button   size="md" ghost>
                 Legal
               </Button>
-              <Button variantColor="teal" size="xs" variant="ghost">
+              <Button   size="md" ghost>
                Contact
               </Button>
-              <Button variantColor="teal" size="xs" variant="ghost">
-               Security
+              <Button   size="md" ghost>
+               Privacy policy
               </Button>
               </ButtonGroup>
             </div>

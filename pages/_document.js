@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
       <Head>
+      <script SameSite="None" src="https://checkout.razorpay.com/v1/checkout.js" />
       </Head>
         <body>
           <Main />
