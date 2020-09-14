@@ -2,6 +2,12 @@ import React, { Fragment } from 'react';
 import DkHeader from '../header/dkHeader';
 import MbHeader from '../header/MbHeader';
 import Footer from '../footer/footer';
+import Router from "next/router";
+import NProgress from "nprogress";
+
+Router.onRouteChangeStart = url => NProgress.start();
+Router.onRouteChangeComplete = url => NProgress.done();
+Router.onRouteChangeError = url => NProgress.done();
 
 const Layout = ({ children }) => {
   return <Fragment>

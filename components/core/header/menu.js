@@ -7,6 +7,9 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import Link from 'next/link';
+import { isAuth,signout } from '../../../actions/auth';
+import Router, { withRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuListComposition() {
+
+const MenuListComponent = ({ router }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -41,7 +45,12 @@ export default function MenuListComposition() {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
+  const Active = (path) => {
+      if(router.pathname === path){
+        return { backgroundColor: "dodgerblue", color: "white" }
+    }
+  }
+
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -58,6 +67,7 @@ export default function MenuListComposition() {
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
+          className="dk-header-my-acc-btn"
           onClick={handleToggle}
         >
          My Account
@@ -71,10 +81,26 @@ export default function MenuListComposition() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Pay now</MenuItem>
-                    <MenuItem onClick={handleClose}>Transactions</MenuItem>
-                    <MenuItem onClick={handleClose}>Setting</MenuItem>
-                    <MenuItem onClick={handleClose}>Sign out</MenuItem>
+                    <Link href="/paynow">
+                      <a>
+                        <MenuItem onClick={handleClose}  >Pay now</MenuItem>
+                      </a>
+                    </Link>
+
+                    <Link href="/transactions">
+                      <a>
+                        <MenuItem onClick={handleClose}  >Transactions</MenuItem>
+                      </a>
+                    </Link>
+
+                    <Link href="/setting">
+                      <a>
+                        <MenuItem onClick={handleClose}  >Setting</MenuItem>
+                      </a>
+                    </Link>
+
+                        <MenuItem onClick={() => signout(() => Router.replace(`/`))} style={{ backgroundColor: "red", color: "white"}}>Sign out</MenuItem>
+
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
@@ -85,3 +111,5 @@ export default function MenuListComposition() {
     </div>
   );
 }
+
+export default withRouter(MenuListComponent);

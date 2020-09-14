@@ -1,3 +1,67 @@
+/* --------------
+  Progress bar
+ ----------------*/
+#nprogress {
+  pointer-events: none;
+}
+#nprogress .bar {
+  background: #29d;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  border: 1px solid #29d!important;
+  width: 100%;
+  height: 1px!important;
+}
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1.0;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 1px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 /* ---------
     HEADER
 ----------- */
@@ -10,7 +74,7 @@
   z-index: 100;
   background-color: white;
   /* background-color: #2B2B52; */
-  /* box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important; */
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9;
 }
 .dk-header-title{
   font-size: 32px;
@@ -41,8 +105,13 @@
   margin-top: 14px;
 }
 .dk-header-col-3{
-  margin-top: 14px;
+  margin-top: 0px;
 }
+.dk-header-my-acc-btn{
+  background-color: #2B2B52!important;
+  color: white!important
+}
+
 .mb-header-outer-container{
   position: fixed;
   z-index: 100;
@@ -105,6 +174,15 @@
 .css-6cthfa{
   background-color:#2B2B52!important;
 }
+.css-1ga4kqw{
+  border-color: black!important;
+    color: black!important;
+}
+.css-uncjab{
+  border-color: black!important;
+  background-color: #2B2B52!important;
+  color: white!important;
+}
 .col-md-4{
   padding-left: 0px!important;
   padding-right: 0px!important;
@@ -112,6 +190,9 @@
 .col-md-8{
   padding-left: 0px!important;
   padding-right: 0px!important;
+}
+.col-md-6{
+
 }
 .col-md-7{
   padding-left: 0px!important;
@@ -169,7 +250,7 @@
     right: 0px;
     position: absolute;
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     background-image: radial-gradient(hsla(0,0%,100%,.09) 15%,rgb(48 48 60) 0),radial-gradient(hsla(0,0%,10%,.9) 15%,#1e2023 0);
     background-size: 26px 25px;
 
@@ -191,9 +272,26 @@
 }
 .dk-home-inner-container-start{
   /* margin-top: 30px; */
-  padding: 15px;
+  padding: 20px;
   /* margin-right: 10px; */
-  background-color:#ffffff;
+  background-color:white;
+  min-width: 360px!important;
+  max-width: 400px!important;
+  /* max-height: 500px!important; */
+  min-height: 500px!important;
+  /* padding-top:10px; */
+
+
+  /* border-radius: 5px; */
+  /* height: 500px; */
+  box-shadow: 0 0.55rem 0.5rem #D9D9D8 !important
+
+}
+.dk-home-inner-container-description{
+  /* margin-top: 30px; */
+  padding: 20px;
+  /* margin-right: 10px; */
+  background-color:#01CBC6;
   min-width: 360px!important;
   max-width: 400px!important;
   max-height: 490px!important;
@@ -202,12 +300,16 @@
 
   /* border-radius: 5px; */
   /* height: 500px; */
-  box-shadow: 0 0.55rem 0.3rem #D9D9D8 !important;
+  box-shadow: 0 0.55rem 0.01rem #D9D9D8 !important
 
 }
+
 @media (min-width: 1000px) {
   .dk-home-inner-container-start{
     margin-right: 0px;
+  }
+  .dk-home-inner-container-description{
+        margin-right: 0px;
   }
 }
 .dk-home-inner-container-start-btn100{
@@ -217,8 +319,10 @@
   margin-top: 30px;
 }
 .dk-home-phone-input-container{
-    margin-top: 30px;
-    text-align: center;
+  padding: 5px 0px 5px 0px;
+  /* background-color:#8c8c8c; */
+  margin-top: 30px;
+  text-align: center;
 }
 .dk-home-otp-input-container{
   margin-top: 30px;
@@ -250,6 +354,8 @@ font-weight: 600;
 }
 .dk-home-inner-container-2{
   background-color:white;
+  max-height: 500px;
+
   box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
   /* margin-left: 20px; */
   /* box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important; */
@@ -278,7 +384,7 @@ font-weight: 600;
 }
 .home-dk-carousel{
     margin-bottom: 35px;
-    /* background-color: #f9f0ff; */
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
 }
@@ -371,8 +477,8 @@ text-align: center;
 }
 .dk-home-container{
 
-  /* background-color: #fafafa; */
-  min-height:60vh;
+ /* background-color: #DAE0E2; */
+  /* min-height:95vh; */
   padding-bottom: 30px;
   padding-top: 30px;
 }
@@ -427,6 +533,18 @@ ________________ */
   padding: 30px;
   /* margin-top: 30px; */
 }
+.dk-home-pay-now-btn{
+  background-color: #2B2B52!important;
+  color: white!important;
+  font-weight: bold!important;
+}
+.dk-paynow-card{
+  margin-top: 20px;
+  min-height: 60vh;
+  padding-bottom: 20px;
+  /* padding-right: 25px!important; */
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+}
 .dk-pay-spinner{
   position: fixed;
   top: 50%;
@@ -440,8 +558,40 @@ ________________ */
   background-color: grey;
   text-align: center;
   position: fixed;
-
   bottom: 0px!important;
   left: 0px!important;
   right: 0px!important;
+}
+.dk-pay-container{
+
+
+}
+.paynow-title{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+}
+.pay-btn-container{
+  padding-top: 10px;
+  /* padding-left: 15px; */
+}
+.pay-now-form{
+padding-right: 15px;
+}
+.pay-ifsc-details-container{
+  margin-bottom: 15px;
+  padding-left: 20px;
+  color: black!important;
+  padding-right: 20px;
+  background-color: #f0f5ff;
+}
+.pay-ifsc-notfound-container{
+  background-color: red;
+  color: white!important;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  font-weight: bolder!important;
 }
