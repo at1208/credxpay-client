@@ -16,7 +16,7 @@ import { Input,
 // import StepCard from './card';
 import { Button } from 'antd'
 import { Carousel } from 'antd';
-import {sendingOTP, verifyingOTP,authenticate, isAuth, saveUserInfo} from '../../../actions/auth';
+import {sendingOTP, verifyingOTP,authenticate, isAuth, saveUserInfo,getUserDetailById} from '../../../actions/auth';
 import Router from 'next/router';
 import Testimonials from './testimonial';
 import FAQs from './faqs';
@@ -44,6 +44,7 @@ const DKHome = () => {
   const [loginStatus, setLoginStatus] = useState(false)
   const [countdown, setCountdown] = useState();
   const [disableResend, setDisableResend] = useState(true);
+  const [updateUser, setUpdateUser] = useState(false);
 
   const [userDetail, setUserDetail] = useState({
     _id: isAuth() && isAuth()._id,
@@ -75,6 +76,24 @@ const DKHome = () => {
   }, [otp])
 
 
+useEffect(() => {
+  if(isAuth()){
+    getUserDetailById(isAuth() && isAuth()._id)
+      .then(res => {
+        if(!res.result.name){
+           return setUpdateUser(true)
+        }
+        setUpdateUser(false)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+},[])
+
+
+
+
 
   const handlePhoneNumber = (e) => {
         setPhone(e.target.value)
@@ -96,6 +115,7 @@ const DKHome = () => {
     const saveuserDetail = () => {
       saveUserInfo(userDetail)
         .then((response) => {
+          console.log(response)
             Router.push(`/paynow`);
         })
         .catch((err) => console.log(err))
@@ -132,7 +152,7 @@ const DKHome = () => {
       toast({
             title: "failed to send",
             position: "top",
-            description: response.error,
+            description: 'Something went wrong' || response.error,
             status: "error",
             duration: 5000,
             isClosable: true,
@@ -164,11 +184,27 @@ const DKHome = () => {
       setLoginStatus(true)
       authenticate(response, () => {
         if (isAuth()) {
-             if(isAuth() && isAuth().name){
-                 Router.push(`/paynow`);
-             }
-        }
-      })
+              getUserDetailById(isAuth() && isAuth()._id)
+                .then(result => {
+                  if(result.error){
+                    toast({ title: "Something went wrong",
+                            position: "top",
+                            status: "success",
+                            duration: 3000,
+                            isClosable: true,
+                            })
+                  }
+                  setUserDetail({...userDetail, _id: isAuth() && isAuth()._id})
+                  if(!result.result.name){
+                    return setUpdateUser(true)
+                  }
+                   Router.push(`/paynow`);
+                })
+                .catch((err) => {
+                  console.log(err)
+                })
+            }
+        })
    })
   }
 
@@ -231,7 +267,7 @@ const showCarousel = () => {
 const stacks = () => {
   return <div>
               {<div>
-                    <img src="/one.svg" />
+                    {!updateUser && <img src="/one.svg" />}
                     {verificationStack === 0 && !isAuth() &&
                     <div className="dk-home-proceed-btn">
                     <ChakraButton
@@ -322,6 +358,7 @@ const getCoutdownTime = (time) => {
 
 
 
+
 const getStartedContainer = () => {
   return <div>
             <div className="container-fluid">
@@ -339,9 +376,9 @@ const getStartedContainer = () => {
                        <div className="row justify-content-center">
                            <div className="dk-home-inner-container-start">
                                {showCarousel()}
-                               {isAuth() && !isAuth().name && userInfo()}
+                               {isAuth() && updateUser && userInfo()}
                                {stacks()}
-                               {isAuth() && isAuth().name && <div className="mt-5 dk-home-pay-now-btn">
+                               {isAuth() && !updateUser && <div className="mt-5 dk-home-pay-now-btn">
                                 <Link href='/paynow'>
                                   <a>
                                     <Button

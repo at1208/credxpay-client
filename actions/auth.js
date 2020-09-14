@@ -132,3 +132,18 @@ export const saveUserInfo = data => {
         })
         .catch(err => console.log(err));
 };
+
+
+export const getUserDetailById = id => {
+    return fetch(`${process.env.NEXT_PUBLIC_API}/user/details/${id}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
