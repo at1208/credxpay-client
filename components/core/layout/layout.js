@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import DkHeader from '../header/dkHeader';
-import MbHeader from '../header/MbHeader';
+import MbHeader from '../header/mbHeader';
 import Footer from '../footer/footer';
 import Router from "next/router";
 import NProgress from "nprogress";
