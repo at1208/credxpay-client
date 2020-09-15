@@ -20,6 +20,7 @@ const faqs = [{ ques: `How secure is CREDxpay?`, ans:`CREDxpay uses crucial secu
               { ques: `What are the benefits of using CREDxpay?`, ans: `CREDxpay provides one stop solution for all your financial transactions you incurred in your day to day life. Its efficient working model and easy user interface makes it even better.`},
               { ques: `What are the fees/charges for using CREDxpay?`, ans: `It varies with the type of transaction and for a particular transaction charges will be mentioned there only.`},
               { ques: `How do I make my house rent payment on CREDxpay?`, ans: `It's just three simple steps-
+
                                                                                 1) Register yourself to CREDxpay with your Email ID.
                                                                                 2) Attach few essential documents like Landlord’s Contact, Id proof, etc.
                                                                                 3) Once you get verification mail you are ready to go. Just click on "Proceed to Pay" and within few cliks you can make your payment.`},

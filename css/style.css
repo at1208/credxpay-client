@@ -828,3 +828,23 @@ padding-right: 15px;
     border-radius: 50%;
   }
 }
+
+/* ------------
+  Settings
+-------------- */
+.setting-container{
+  padding: 10px;
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9 !important;
+  margin-top: 20px;
+}
+.setting-field{
+  margin-top: 10px!important;
+  margin-bottom: 10px!important;
+}
+.setting-saved-btn{
+  background-color: #2B2B52!important;
+  color: white;
+  font-weight: 900;
+  padding: 5px 50px 5px 50px;
+  border-radius: 5px;
+}
