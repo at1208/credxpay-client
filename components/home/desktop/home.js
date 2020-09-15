@@ -21,6 +21,7 @@ import Router from 'next/router';
 import Testimonials from './testimonial';
 import FAQs from './faqs';
 import Achievements from './achievement';
+import Howitworks from './Howitworks';
 import Timer from 'react-compound-timer';
 const { Seconds }  = Timer
 import Link from 'next/link'
@@ -445,8 +446,8 @@ const getStartedContainer = () => {
 
 
   return <Fragment>
-                <div className="dk-home-inner-container-3" />
                  {getStartedContainer()}
+                 <Howitworks />
                  <Achievements />
                  <Testimonials />
                  <FAQs/>
