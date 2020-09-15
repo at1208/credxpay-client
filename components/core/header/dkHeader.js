@@ -28,15 +28,14 @@ const boxShadowStyle = () => {
                   </Link>
                 </div>
                 <div className="col-md-7 dk-header-col-2">
-                    <Button className="mr-1 ml-1" ghost><b>Benefits</b></Button>
-                    <Button className="mr-1 ml-1" ghost><b>How it works</b></Button>
-                    <Button className="mr-1 ml-1" ghost><b>Testimonials</b></Button>
-                    <Button className="mr-1 ml-1" ghost><b>FAQs</b></Button>
+                    <Button className="dk-header-btn" ghost><b>Benefits</b></Button>
+                    <Button className="dk-header-btn" ghost><b>How it works</b></Button>
+                    <Button className="dk-header-btn" ghost><b>Testimonials</b></Button>
+                    <Button className="dk-header-btn" ghost><b>FAQs</b></Button>
                 </div>
 
                 <div className="col-md-2 dk-header-col-3 mt-2">
                 {isAuth() && <Menu />}
-                {/*isAuth() && <button className="btn btn-sm bg-danger text-white" onClick={}>Sign out</button>*/}
                 </div>
               </div>
            </div>

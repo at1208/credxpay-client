@@ -92,8 +92,13 @@
   padding-top: 15px;
   }
 }
-.dk-header-button{
+/* .dk-header-button{
   padding: 15px 10px 10px 40px;
+} */
+.dk-header-btn{
+  margin-left: 0.2px;
+  font-weight: 800!important;
+  margin-right: 0.2px;
 }
 .dk-header-right-end{
   margin-top: 20px!important;
@@ -106,6 +111,7 @@
   margin-top: 0px;
 }
 .dk-header-my-acc-btn{
+  font-weight: 900!important;
   background-color: #2B2B52!important;
   color: white!important
 }
@@ -141,7 +147,7 @@
 .layout-container{
   padding-bottom: 70px;
   padding-top: 55px;
-  min-height: 70vh;
+  min-height: 85vh;
 }
 
 
@@ -189,6 +195,10 @@
   padding-left: 0px!important;
   padding-right: 0px!important;
 }
+.col-md-2{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
 .col-md-8{
   padding-left: 0px!important;
   padding-right: 0px!important;
@@ -212,6 +222,16 @@
 .container-fluid{
   padding-left: 0px!important;
   padding-right: 0px!important;
+}
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.MuiListItemIcon-root{
+  min-width: 40px!important;
+}
+.signout{
+ padding-left: 30px;
 }
 
 
@@ -463,6 +483,12 @@
   background-color:  #fafafa;
   text-align: center;
 }
+.dk-footer-btn{
+  border: 0px!important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .dk-home-outer-5-container{
   min-height: 90vh;
 }

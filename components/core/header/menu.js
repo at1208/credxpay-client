@@ -7,6 +7,13 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import PaymentIcon from '@material-ui/icons/Payment';
+import SettingsIcon from '@material-ui/icons/Settings';
+import Typography from '@material-ui/core/Typography';
+import { FaReceipt } from "react-icons/fa";
+
+
 import Link from 'next/link';
 import { isAuth,signout } from '../../../actions/auth';
 import Router, { withRouter } from 'next/router';
@@ -83,24 +90,43 @@ const MenuListComponent = ({ router }) => {
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                     <Link href="/paynow">
                       <a>
-                        <MenuItem onClick={handleClose}  >Pay now</MenuItem>
+
+                        <MenuItem onClick={handleClose}  >
+                        <ListItemIcon>
+                        <PaymentIcon />
+                        </ListItemIcon>
+                        <Typography variant="inherit">Pay now</Typography>
+                        </MenuItem>
                       </a>
                     </Link>
 
                     <Link href="/transactions">
                       <a>
-                        <MenuItem onClick={handleClose}  >Transactions</MenuItem>
+                        <MenuItem onClick={handleClose}  >
+                        <ListItemIcon>
+                        <FaReceipt style={{ fontSize: "22px"}} />
+                        </ListItemIcon>
+                        <Typography variant="inherit">Transactions</Typography>
+                      </MenuItem>
                       </a>
                     </Link>
 
                     <Link href="/setting">
                       <a>
-                        <MenuItem onClick={handleClose}  >Setting</MenuItem>
+                        <MenuItem onClick={handleClose}  >
+                        <ListItemIcon>
+                        <SettingsIcon />
+                        </ListItemIcon>
+                        <Typography variant="inherit">Setting</Typography>
+                        </MenuItem>
                       </a>
                     </Link>
-
-                        <MenuItem onClick={() => signout(() => Router.replace(`/`))} style={{ backgroundColor: "red", color: "white"}}>Sign out</MenuItem>
-
+                    <div className="mt-4"/>
+                    <div className="ml-2 mr-2">
+                      <MenuItem onClick={() => signout(() => Router.replace(`/`))} style={{ backgroundColor: "red", color: "white"}}>
+                        <Typography variant="inherit" className="signout">Sign out</Typography>
+                      </MenuItem>
+                    </div>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

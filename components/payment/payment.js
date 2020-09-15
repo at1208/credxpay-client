@@ -223,7 +223,6 @@ const showIFSC = () => {
                         <h2 className="paynow-title">{paynow ?'Please check your detail before proceeding': 'Please enter beneficiary details'}</h2>
                         <form className="pay-now-form">
                         <TextField
-                        variant="outlined"
                         className="pay-now-field"
                         fullWidth
                         label="Beneficiary name"
@@ -231,7 +230,6 @@ const showIFSC = () => {
                         onChange={(e) => setBeneficiary({...beneficiary, beneficiary_name: e.target.value })}/>
 
                         <TextField
-                        variant="outlined"
                         className="pay-now-field"
                         fullWidth
                         label="Beneficiary Account number"
@@ -240,7 +238,6 @@ const showIFSC = () => {
                         onChange={(e) => setBeneficiary({...beneficiary, beneficiary_account: e.target.value })}/>
 
                         <TextField
-                        variant="outlined"
                         className="pay-now-field"
                         fullWidth
                         label="Confirm Account number"
@@ -249,7 +246,6 @@ const showIFSC = () => {
                          onChange={(e) => setBeneficiary_confirm_acc(e.target.value)} />
 
                         <TextField
-                        variant="outlined"
                         className="pay-now-field"
                         fullWidth
                         label="IFSC"
@@ -258,17 +254,25 @@ const showIFSC = () => {
 
                         {showIFSC()}
 
-                        <FormControl fullWidth  size="small" variant="outlined" className="pay-now-field">
+                        <TextField
+                        className="pay-now-field"
+                        fullWidth
+                        type="Number"
+                        label="₹ Amount"
+                        size="small"
+                        onChange={(e) => setBeneficiary({...beneficiary, amount: parseInt(e.target.value) })} />
+
+
+                        {/*<FormControl fullWidth  size="small"   className="pay-now-field">
                          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                          <OutlinedInput
-                           onChange={(e) => setBeneficiary({...beneficiary, amount: parseInt(e.target.value) })}
-                           startAdornment={<InputAdornment position="start">₹</InputAdornment>}
+
+                           startAdornment={<InputAdornment position="start"></InputAdornment>}
                            labelWidth={60}
                          />
-                        </FormControl>
+                        </FormControl>*/}
 
                         <TextField
-                        variant="outlined"
                         className="pay-now-field"
                         fullWidth
                         label="Purpose"
