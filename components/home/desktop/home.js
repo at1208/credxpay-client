@@ -19,7 +19,8 @@ import { FaCreditCard,
          FaAward,
          FaReceipt } from "react-icons/fa";
 import { AiFillCreditCard } from "react-icons/ai";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazy-load';
+
 import Timer from 'react-compound-timer';
 import { SiTrustpilot } from "react-icons/si";
 import { Button } from 'antd'
@@ -270,7 +271,9 @@ const showCarousel = () => {
 const stacks = () => {
   return <div>
               {<div>
-                    {!updateUser && <LazyLoadImage src="/one.svg" alt="" effect="blur"/>}
+                    {!updateUser &&   <LazyLoad  height={"100%"} offsetHorizontal={50}>
+                                        <img src="/one.svg" alt="" effect="blur"/>
+                                         </LazyLoad>}
                     {verificationStack === 0 && !isAuth() &&
                     <div className="dk-home-proceed-btn">
                     <ChakraButton
