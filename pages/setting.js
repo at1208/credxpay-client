@@ -28,7 +28,7 @@ const Setting = () => {
 
 const onSubmitUser = (e) => {
       e.preventDefault()
-      saveUserInfo({ name: user.name, email: user.email })
+      saveUserInfo({ name: user.name, email: user.email, _id: isAuth() && isAuth()._id})
         .then(response => {
           if(response.error){
             toast({
