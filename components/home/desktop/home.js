@@ -21,7 +21,7 @@ import Router from 'next/router';
 import Testimonials from './testimonial';
 import FAQs from './faqs';
 import Achievements from './achievement';
-import Howitworks from './Howitworks';
+import Howitworks from './howitworks';
 import Timer from 'react-compound-timer';
 const { Seconds }  = Timer
 import Link from 'next/link'
