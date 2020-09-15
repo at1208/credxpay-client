@@ -3,40 +3,39 @@ import { Input,
          InputGroup,
          InputLeftElement,
          Stack,
-         Icon,
-         ButtonGroup,
          Button as ChakraButton,
          NumberInput,
          InputLeftAddon,
          NumberInputField,
          useToast,
-         Divider,
          Spinner } from "@chakra-ui/core";
-// import MuiButton from '@material-ui/core/Button';
-// import StepCard from './card';
+import {sendingOTP,
+        verifyingOTP,
+        authenticate,
+        isAuth,
+        saveUserInfo,
+        getUserDetailById} from '../../../actions/auth';
+import { FaCreditCard,
+         FaAward,
+         FaReceipt } from "react-icons/fa";
+import { AiFillCreditCard } from "react-icons/ai";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Timer from 'react-compound-timer';
+import { SiTrustpilot } from "react-icons/si";
 import { Button } from 'antd'
 import { Carousel } from 'antd';
-import {sendingOTP, verifyingOTP,authenticate, isAuth, saveUserInfo,getUserDetailById} from '../../../actions/auth';
 import Router from 'next/router';
+const { Seconds }  = Timer
+import Link from 'next/link'
+
 import Testimonials from './testimonial';
 import FAQs from './faqs';
 import Achievements from './achievement';
 import Howitworks from './howitworks';
-import Timer from 'react-compound-timer';
-const { Seconds }  = Timer
-import Link from 'next/link'
-import { AiFillCreditCard } from "react-icons/ai";
-import { FaCreditCard,FaAward,FaReceipt } from "react-icons/fa";
-import { SiTrustpilot } from "react-icons/si";
+import Benefits from './benefits';
 
 
 
-/* Verification process
- step 1 - click on get started button
- setp 2 - enter phone number
- step 3 - enter otp
- step 4 - verified
-*/
 
 const DKHome = () => {
   const toast = useToast();
@@ -271,7 +270,7 @@ const showCarousel = () => {
 const stacks = () => {
   return <div>
               {<div>
-                    {!updateUser && <img src="/one.svg" />}
+                    {!updateUser && <LazyLoadImage src="/one.svg" alt="" effect="blur"/>}
                     {verificationStack === 0 && !isAuth() &&
                     <div className="dk-home-proceed-btn">
                     <ChakraButton
@@ -447,6 +446,7 @@ const getStartedContainer = () => {
 
   return <Fragment>
                  {getStartedContainer()}
+                 <Benefits />
                  <Howitworks />
                  <Achievements />
                  <Testimonials />
