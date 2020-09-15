@@ -266,7 +266,7 @@
     right: 0px;
     position: absolute;
     width: 100%;
-    height: 45vh;
+    min-height: 95vh;
     background-image: radial-gradient(hsla(0,0%,100%,.09) 15%,rgb(48 48 60) 0),radial-gradient(hsla(0,0%,10%,.9) 15%,#1e2023 0);
     background-size: 26px 25px;
 
@@ -274,6 +274,11 @@
   margin-left: 20px;
   margin-right: 20px; */
   /* background-color:grey!important; */
+}
+@media (min-width: 767px) and (max-width: 910px) {
+.dk-home-inner-container-3{
+      min-height: 110vh!important;
+}
 }
 .home-dk-step-title{
   font-size: 20px;
@@ -301,23 +306,22 @@
 
   /* border-radius: 5px; */
   /* height: 500px; */
-  box-shadow: 0 0.55rem 0.5rem #D9D9D8 !important
+  /* box-shadow: 0 0.55rem 0.5rem #D9D9D8 !important */
 
 }
 .dk-home-inner-container-description{
   /* margin-top: 30px; */
-  padding: 20px;
+ /* background-color: white; */
   /* margin-right: 10px; */
-  background-color:#01CBC6;
+
   min-width: 360px!important;
-  max-width: 400px!important;
-  max-height: 490px!important;
+  max-height: 520px!important;
   /* padding-top:10px; */
 
 
   /* border-radius: 5px; */
   /* height: 500px; */
-  box-shadow: 0 0.55rem 0.01rem #D9D9D8 !important
+  /* box-shadow: 0 0.55rem 0.01rem #D9D9D8 !important */
 
 }
 
@@ -330,6 +334,9 @@
   }
 }
 .dk-home-inner-container-start-btn100{
+  background-color:#2B2B52!important;
+  color: white!important;
+  font-weight: bolder!important;
   width: 100%!important;
 }
 .dk-home-proceed-btn{
@@ -424,7 +431,6 @@ font-weight: 600;
 
 }
 .home-dk-testimonial-outer-container{
-
     min-height: 400px!important;
     background-color: #f0f0f0;
     padding: 20px;
@@ -452,9 +458,9 @@ font-weight: 600;
   padding: 10px;
 }
 .dk-home-outer-4-container{
-  padding-top: 100px;
+  padding-top: 20%;
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 .dk-home-outer-4-inner-container{
   width: 100%;
@@ -493,13 +499,33 @@ text-align: center;
   text-align: center;
 }
 .dk-home-container{
-
  /* background-color: #DAE0E2; */
   /* min-height:95vh; */
   padding-bottom: 30px;
   padding-top: 30px;
 }
-
+.dk-home-container-title{
+ font-weight: 800!important;
+  text-align: center;
+  padding-bottom: 30px!important;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  font-weight: 800;
+}
+.dk-home-desc-details{
+  padding-right: 20px!important;
+  font-size: 15px;
+  color: white;
+}
+.dk-home-desc-container{
+ padding-bottom: 30px;
+}
+.dk-home-desc-heading{
+   font-weight: 700!important;
+  font-size: 20px;
+  color: white;
+}
 
 .mb-home-proceed-to-pay-container{
   padding: 10px;
@@ -539,7 +565,10 @@ text-align: center;
    margin-top: 100px;
    margin-bottom: 100px;
 }
-
+.dk-home-icons{
+  font-size: 40px;
+  color: white;
+}
 
 
 
@@ -687,7 +716,9 @@ padding-right: 15px;
   testimonial
   ------------- */
 .testimonial-container{
-    min-height:90vh;
+  background-color: #fafafa;
+    min-height:100vh;
+    padding-top: 10%;
   }
 .testimonial-title{
     font-size: 55px;
