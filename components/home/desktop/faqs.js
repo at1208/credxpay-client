@@ -65,8 +65,10 @@ const  ShowFAQs = () => {
       <div className="faqs-container">
          <h1 className="faqs-title">Frequently Asked Questions</h1>
          <div className={classes.root}>
-            <div className="container">
-                     {faqsList()}
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                 {faqsList()}
+                </div>
             </div>
           </div>
        </div>

@@ -2,6 +2,7 @@ import '../css/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'antd/dist/antd.css';
 import 'react-toastify/dist/ReactToastify.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import { AppProps } from "next/app";
 
