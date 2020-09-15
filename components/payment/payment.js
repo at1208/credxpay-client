@@ -125,9 +125,11 @@ const payment = () => {
             return toastify.error(response.error)
           }
           setSpinner(true)
+          // console.log(response)
           createPayment({beneficiary_id: response.result._id})
             .then(result => {
               if(result.error){
+               // console.log(result)
                 toastify.error(result.error)
               }
                setSpinner(false)
@@ -276,19 +278,19 @@ const showIFSC = () => {
                         </form>
 
                         <div className="pay-btn-container">
-                           {!paynow && <Button
-                             size="large"
-                             type="primary"
-                             loading={loading}
-                             onClick={onClickPTP}
-                             block><b>Proceed to pay</b></Button>}
+                         {!paynow && <Button
+                           size="large"
+                           type="primary"
+                           loading={loading}
+                           onClick={onClickPTP}
+                           block><b>Proceed to pay</b></Button>}
 
-                           {paynow && <Button
-                             size="large"
-                             type="primary"
-                             loading={loading}
-                             onClick={payment}
-                             block><b>Pay now</b></Button>}
+                         {paynow && <Button
+                           size="large"
+                           type="primary"
+                           loading={loading}
+                           onClick={payment}
+                           block><b>Pay now</b></Button>}
                         </div>
                      </div>
                    </div>

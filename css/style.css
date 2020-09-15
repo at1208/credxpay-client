@@ -150,6 +150,10 @@
 /* --------------
  GENERAL STYLING
 ---------------- */
+.col{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
 .ant-drawer-header{
   padding: 16px 20px!important;
 }
@@ -271,6 +275,7 @@
   margin-bottom: 30px;
 }
 .dk-home-inner-container-start{
+
   /* margin-top: 30px; */
   padding: 20px;
   /* margin-right: 10px; */
@@ -594,4 +599,37 @@ padding-right: 15px;
   margin-left: 15px;
   margin-bottom: 10px;
   font-weight: bolder!important;
+}
+
+
+/* ---------------
+  Transaction Card
+------------------ */
+.transaction-card{
+
+  box-shadow: 0 0.15rem 0.5rem #d9d9d9;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+}
+.transaction-card-status{
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 4px;
+}
+.transaction-card-date{
+  font-weight: bolder;
+}
+.transaction-card-space{
+  padding: 2px;
+}
+
+.faqs-container{
+  /* background-color: yellow; */
+  min-height: 100vh;
+}
+.faqs-title{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 25px;
 }
