@@ -6,13 +6,16 @@ const status = data && data.status;
 
 
 const paymentStatus = (status) => {
-       if(status === "SUCCESS"){
+       if(status === "payout successful"){
          return "success"
        }
-       if(status === "UNVERIFIED_IN_PROCESS"){
+       if(status === "payout failed"){
          return "failed"
        }
-       if(status === "VERIFIED_IN_PROCESS"){
+       if(status === "payment unverified"){
+         return "failed"
+       }
+       if(status === "payment verified"){
          return "in process"
        }
        if(status === "FAIL"){
@@ -76,7 +79,7 @@ const statusCard = (text) => {
               </div>
               <div className="transaction-card-space" />
               <div className="text-center">
-                 
+
               </div>
           </div>
 }

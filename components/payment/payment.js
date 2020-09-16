@@ -81,12 +81,20 @@ const validateBeneficiary = () => {
     toastFunction('Beneficiary name is required')
     return 0;
   }
-  if(beneficiary.beneficiary_name.length < 2){
-    toastFunction('Beneficiary name must be greater than 2 characters')
+  if(beneficiary.beneficiary_name.length < 4){
+    toastFunction('Beneficiary name must be greater than 4 characters')
     return 0;
   }
   if(!beneficiary.beneficiary_account){
     toastFunction('Beneficiary account number is required')
+    return 0;
+  }
+  if(beneficiary.beneficiary_account.length < 5){
+    toastFunction('Invaild beneficiary account number')
+    return 0;
+  }
+  if(beneficiary.beneficiary_account.length > 35){
+    toastFunction('Invaild beneficiary account number')
     return 0;
   }
   if(!beneficiary_confirm_acc){
@@ -123,17 +131,19 @@ const payment = () => {
       createBeneficiary(beneficiary)
         .then(response => {
           if(response.error){
-            return toastify.error(response.error)
+            return console.log(response.error)
           }
           setSpinner(true)
-          // console.log(response)
+
+          console.log('beneficiary',response)
           createPayment({beneficiary_id: response.result._id})
             .then(result => {
               if(result.error){
-               // console.log(result)
+
                 toastify.error(result.error)
               }
                setSpinner(false)
+                console.log('payment',result)
                // setBeneficiary({...beneficiary,
                //  beneficiary_name: '',
                //  beneficiary_account: '',
@@ -175,6 +185,7 @@ const paymentHandler = (orderID) => {
                if(result.error){
                  console.log(result.error)
                }
+               console.log('verification', res)
                createPayout(result.result.beneficiary)
                  .then(response => {
                    // setBeneficiary({
@@ -184,7 +195,8 @@ const paymentHandler = (orderID) => {
                    //   amount: '',
                    //   purpose: ''
                    // })
-                   setBeneficiary_confirm_acc('');
+                   console.log('payout', response)
+                   // setBeneficiary_confirm_acc('');
                  })
                  .catch(err => console.log(err))
              })
