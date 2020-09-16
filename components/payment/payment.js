@@ -13,6 +13,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
+import Preview from './preview';
 import { Spin } from 'antd';
 
 const Payment = () => {
@@ -33,7 +34,7 @@ const [loading, setLoading] = useState(false);
 const [ifscDetail, setIfscDetails] = useState();
 // const [disable, setDisable] = useState(false);
 const [ifscSpinner, setIfscSpinner] = useState(false);
-const [paynow, setPaynow] = useState(false);
+const [modal, setModal] = useState(false);
 
 
 useEffect(() => {
@@ -56,11 +57,12 @@ useEffect(() => {
 const onClickPTP = () => {
   const error = validateBeneficiary();
   if(error === 1){
-    setLoading(true)
-    setTimeout(() => {
-    setLoading(false)
-    setPaynow(true);
-    },1000)
+  return setModal(true)
+    // setLoading(true)
+    // setTimeout(() => {
+    // setLoading(false)
+    // setPaynow(true);
+    // },1000)
   }
 }
 
@@ -118,7 +120,6 @@ const validateBeneficiary = () => {
 
 
 const payment = () => {
-
       createBeneficiary(beneficiary)
         .then(response => {
           if(response.error){
@@ -133,12 +134,12 @@ const payment = () => {
                 toastify.error(result.error)
               }
                setSpinner(false)
-               setBeneficiary({...beneficiary,
-                beneficiary_name: '',
-                beneficiary_account: '',
-                ifsc_code: '',
-                amount: '',
-                purpose: ''})
+               // setBeneficiary({...beneficiary,
+               //  beneficiary_name: '',
+               //  beneficiary_account: '',
+               //  ifsc_code: '',
+               //  amount: '',
+               //  purpose: ''})
                paymentHandler(result.orderID)
             })
             .catch((err) => {
@@ -159,7 +160,8 @@ const paymentHandler = (orderID) => {
     name: 'Payments',
     order_id: orderID,
     prefill: {
-      contact: isAuth() && isAuth().mobile
+      contact: isAuth() && isAuth().mobile,
+      email: isAuth() && isAuth().email
     },
     theme: {
     color: 'black',
@@ -175,13 +177,13 @@ const paymentHandler = (orderID) => {
                }
                createPayout(result.result.beneficiary)
                  .then(response => {
-                   setBeneficiary({
-                     beneficiary_name: '',
-                     beneficiary_account: '',
-                     ifsc_code: '',
-                     amount: '',
-                     purpose: ''
-                   })
+                   // setBeneficiary({
+                   //   beneficiary_name: '',
+                   //   beneficiary_account: '',
+                   //   ifsc_code: '',
+                   //   amount: '',
+                   //   purpose: ''
+                   // })
                    setBeneficiary_confirm_acc('');
                  })
                  .catch(err => console.log(err))
@@ -220,7 +222,7 @@ const showIFSC = () => {
                    <div className="dk-pay-container"/>
                    <div className="row justify-content-center">
                      <div className="col-md-5 col-lg-4 col-sm-8 dk-paynow-card">
-                        <h2 className="paynow-title">{paynow ?'Please check your detail before proceeding': 'Please enter beneficiary details'}</h2>
+                        <h2 className="paynow-title">{'Please enter beneficiary details'}</h2>
                         <form className="pay-now-form">
                         <TextField
                         className="pay-now-field"
@@ -278,23 +280,10 @@ const showIFSC = () => {
                         label="Purpose"
                         size="small"
                         onChange={(e) => setBeneficiary({...beneficiary, purpose: e.target.value })} />
-                       {/*   <button>Submit</button> */}
                         </form>
 
                         <div className="pay-btn-container">
-                         {!paynow && <Button
-                           size="large"
-                           type="primary"
-                           loading={loading}
-                           onClick={onClickPTP}
-                           block><b>Proceed to pay</b></Button>}
-
-                         {paynow && <Button
-                           size="large"
-                           type="primary"
-                           loading={loading}
-                           onClick={payment}
-                           block><b>Pay now</b></Button>}
+                         <Preview data={beneficiary} proceed={() => onClickPTP()} modal={modal} paynow={() => payment()}/>
                         </div>
                      </div>
                    </div>

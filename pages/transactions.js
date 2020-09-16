@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/core/layout/layout';
-import TransactionComponent from '../components/payment/transactions';
+import TransactionComponent from '../components/transactions/transactions';
 import Private from '../components/core/private';
 
 const Transactions = () => {
