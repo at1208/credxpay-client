@@ -34,7 +34,6 @@ const [loading, setLoading] = useState(false);
 const [ifscDetail, setIfscDetails] = useState();
 // const [disable, setDisable] = useState(false);
 const [ifscSpinner, setIfscSpinner] = useState(false);
-const [modal, setModal] = useState(false);
 
 
 useEffect(() => {
@@ -57,7 +56,7 @@ useEffect(() => {
 const onClickPTP = () => {
   const error = validateBeneficiary();
   if(error === 1){
-  return setModal(true)
+  return true;
     // setLoading(true)
     // setTimeout(() => {
     // setLoading(false)
@@ -295,7 +294,7 @@ const showIFSC = () => {
                         </form>
 
                         <div className="pay-btn-container">
-                         <Preview data={beneficiary} proceed={() => onClickPTP()} modal={modal} paynow={() => payment()}/>
+                         <Preview data={beneficiary} proceed={() => onClickPTP()} paynow={() => payment()}/>
                         </div>
                      </div>
                    </div>

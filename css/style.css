@@ -347,6 +347,51 @@ button:focus {
 .dk-home-proceed-btn{
   margin-top: 30px;
 }
+@media (max-width: 767px) {
+  .dk-home-proceed-btn{
+    margin-top: 0px;
+    z-index: 200;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+  .dk-home-phone-input-container{
+    position: fixed;
+    bottom: 0px;
+    z-index: 200;
+    left: 0px;
+    right: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    text-align: center;
+  }
+  .dk-home-otp-input-container {
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    z-index: 200;
+    left: 0px;
+    right: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    text-align: center;
+  }
+  .dk-home-pay-now-btn{
+    position: fixed;
+    bottom: 0px;
+    z-index: 200;
+    left: 0px;
+    right: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 0px;
+    text-align: center;
+  }
+}
+.home-img{
+  width: 100%;
+  
+}
 .dk-home-phone-input-container{
   padding: 5px 0px 5px 0px;
   margin-top: 30px;
@@ -551,11 +596,12 @@ button:focus {
   background-repeat: no-repeat;
 }
 .mb-drawer-menu-items{
+  padding: 10px 0px 10px 0px;
   margin: 7px;
   font-size: 20px;
   border-bottom: 1px solid grey;
-  width: 140px;
-  text-align:  left;
+  width: 150px;
+  text-align: center!important;
 }
 .mb-home-heading{
   font-size: 25px;
@@ -649,7 +695,7 @@ padding-right: 15px;
   font-size: 16px!important;
   border: 0px!important;
 }
- 
+
 .ant-btn-primary{
   background-color: #2B2B52!important;
   color: white!important;

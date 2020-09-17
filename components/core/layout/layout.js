@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
                   {children}
                 </div>
                 <div>
-                <Footer />
+                 
                 </div>
 
          </Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Layout from '../components/core/layout/layout';
 import DkHome from '../components/home/desktop/home';
-import MbHome from '../components/home/mbHome';
+import MbHome from '../components/home/mobile/home';
 
 
 const App = () => {

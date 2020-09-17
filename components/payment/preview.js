@@ -2,11 +2,10 @@ import { Modal, Button } from 'antd';
 import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 
-const Preview  = ({ data, proceed, modal, paynow }) => {
+const Preview  = ({ data, proceed, paynow }) => {
 const [visible, setVisible] = useState(false)
 const showModal = () => {
-   proceed()
-   setVisible(modal)
+   setVisible(proceed())
   };
 
   const handleOk = e => {
