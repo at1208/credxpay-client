@@ -214,7 +214,19 @@
   border: 0px!important;
   color: black!important;
 }
-
+.css-c4fa1y{
+  border-radius: 0px!important;
+  height: 3.3em!important;
+}
+.css-1ga4kqw{
+  height: 3.5em;
+  font-size: 1.5em;
+}
+.css-uncjab{
+  border-radius: 0px!important;
+  height: 2.62em!important;
+  font-size: 1.5em!important;
+}
 .MuiAccordion-root{
   box-shadow: 0 0.1rem 0.2rem #d9d9d9 !important;
 
@@ -390,7 +402,7 @@ button:focus {
 }
 .home-img{
   width: 100%;
-  
+
 }
 .dk-home-phone-input-container{
   padding: 5px 0px 5px 0px;
