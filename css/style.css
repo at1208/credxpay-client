@@ -146,7 +146,7 @@
 ------------ */
 .layout-container{
   padding-bottom: 70px;
-  padding-top: 55px;
+  padding-top: 44px;
   min-height: 85vh;
 }
 
@@ -183,12 +183,15 @@
   background-color:#2B2B52!important;
 }
 .css-1ga4kqw{
-  border-color: black!important;
+  border: 0px!important;
+  background-color:#f5f5f5!important;
+  /* border-color: grey!important; */
   color: black!important;
 }
 .css-uncjab{
+  border: 0px!important;
   border-color: black!important;
-  background-color: #2B2B52!important;
+  background-color: #0ABDE3!important;
   color: white!important;
 }
 .col-md-4{
@@ -219,13 +222,12 @@
   height: 3.3em!important;
 }
 .css-1ga4kqw{
-  height: 2.62em!important;
-  font-size: 1.5em!important;
+
+  font-size: 1.4em!important;
 }
 .css-uncjab{
   border-radius: 0px!important;
-  height: 2.62em!important;
-  font-size: 1.5em!important;
+  font-size: 1.4em!important;
 }
 .MuiAccordion-root{
   box-shadow: 0 0.1rem 0.2rem #d9d9d9 !important;
@@ -351,7 +353,7 @@ button:focus {
   }
 }
 .dk-home-inner-container-start-btn100{
-  background-color:#2B2B52!important;
+  background-color:#0ABDE3!important;
   color: white!important;
   font-weight: bolder!important;
   width: 100%!important;
@@ -369,6 +371,7 @@ button:focus {
     right: 0px;
   }
   .dk-home-phone-input-container{
+    background-color: white;
     position: fixed;
     bottom: 0px;
     z-index: 200;
@@ -632,6 +635,44 @@ button:focus {
   color: white;
 }
 
+.mb-home-icons{
+  font-size: 33px;
+}
+.mb-home-desc-container{
+  margin: 25px;
+}
+.mb-icon-container{
+   padding: 8px;
+  background-color: white;
+}
+ .mb-home-outer-container{
+
+   background-image: radial-gradient(hsla(0,0%,100%,.09) 15%,rgb(48 48 60) 0),radial-gradient(hsla(0,0%,10%,.9) 15%,#1e2023 0);
+   background-size: 26px 25px;
+   padding-bottom: 30px;
+   padding-top: 30px;
+ }
+.mb-home-desc-heading{
+  color: white!important;
+  font-weight: bold;
+  font-size: 17px;
+}
+.mb-home-description{
+  font-size: 14px;
+  color: white;
+}
+.home-img-container{
+ background-image: url('/two.svg');
+ background-color: white;
+}
+.mb-home-title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+.mb-home-title-container{
+  padding: 25px;
+}
 
 
 /* --------------
@@ -715,7 +756,10 @@ padding-right: 15px;
   font-size: 16px!important;
   border: 0px!important;
 }
-
+.col-2{
+  padding-left: 15px!important;
+  padding-right: 1px!important;
+}
 
 /* ---------------
   Transaction Card

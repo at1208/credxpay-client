@@ -239,7 +239,7 @@ const verifyOtp = () => {
    return <div>
                {<div>
                      {!updateUser &&
-                      <div className="container mt-2">
+                      <div className="container mt-2 home-img-container">
                         <img src="/one.svg" alt="" className="home-img"/>
                       </div>
                      }
